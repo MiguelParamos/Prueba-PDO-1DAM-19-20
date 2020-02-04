@@ -243,6 +243,7 @@ public class Persona {
     public static String imprimePersonas(Persona[] arr){
         String ret=""; 
         for(int i=0;i<arr.length;i++){
+            ret+="Persona "+i+":\n";
             ret+=arr[i]+"\n";
         }
         return ret;
