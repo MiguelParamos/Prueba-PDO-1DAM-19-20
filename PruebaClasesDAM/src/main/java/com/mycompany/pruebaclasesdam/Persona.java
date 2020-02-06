@@ -16,6 +16,8 @@ public class Persona extends SerVivo {
     private String nacionalidad; //Nacionalidad principal de la persona
     private Mascota[] mascota; //La mascota de esta persona
     private float saldo; //Indica el dinero que tiene esa persona en euros
+    private Persona madre; //Madre de la persona
+    private Persona padre; //Padre de la persona
     
     public Persona(){
         /*super(nombresPosibles
@@ -68,6 +70,33 @@ public class Persona extends SerVivo {
         this.setSaldo(s);
         this.setMascota(masc);
     }
+
+    public Persona(String n, byte e,String apellido, String nacionalidad, float saldo, Persona madre, Persona padre) {
+        super(n, e);
+        this.setApellido(apellido);
+        this.setNacionalidad(nacionalidad);
+        this.setSaldo(saldo);
+        this.setMadre(madre);
+        this.setPadre(padre);
+    }
+
+    public Persona getMadre() {
+        return madre;
+    }
+
+    public final void setMadre(Persona madre) {
+        this.madre = madre;
+    }
+
+    public Persona getPadre() {
+        return padre;
+    }
+
+    public final void setPadre(Persona padre) {
+        this.padre = padre;
+    }
+    
+    
     
     /**
      * getter de saldo
