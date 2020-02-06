@@ -21,13 +21,33 @@ public class Principal {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        //Declaro una persona aleatoria
-        Persona[] personas = new Persona[4];
+        //Pido tamaño del array y lo creo
+        System.out.println("Bienvenid@ al programa. Dime cuántas personas quieres crear.");
+        int nPersonas=Integer.parseInt(sc.nextLine());
+        Persona[] personas = new Persona[nPersonas];
         //Tengo que inicializar a todas las personas
         //Porque el array es de persona, y las variables Persona
         //son punteros en memoria, que si no se inicializan,
         //Valen null.
-        for (int i = 0; i < personas.length; i++) {
+        //Pido cuántas de ellas quiere crear a mano y las pido por teclado
+        System.out.println("¿Cuántas de ellas quieres introducir a mano?");
+        byte personasAMano=Byte.parseByte(sc.nextLine());
+        for(int i=0;i<personasAMano;i++){
+            System.out.println("Persona "+(i+1)+"/"+personasAMano+":");
+            System.out.println("Dime nombre:");
+            String nom=sc.nextLine();
+            System.out.println("Dime apellidos:");
+            String a=sc.nextLine();
+            System.out.println("Dime Nacionalidad:");
+            String na=sc.nextLine();
+            System.out.println("Dime edad:");
+            byte e=Byte.parseByte(sc.nextLine());
+            System.out.println("Dime saldo:");
+            int s=Integer.parseInt(sc.nextLine());
+            personas[i]=new Persona(nom,a,e,na,s);
+        }
+        //Creo el resto aleatoriamente
+        for (int i = personasAMano; i < personas.length; i++) {
             personas[i] = new Persona();
         }
 
